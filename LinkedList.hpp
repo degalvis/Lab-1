@@ -1,15 +1,15 @@
 #include <iostream>   //outputs mas faciles
 using namespace std;  //imports no usar espacio
-#include "node.hpp"
+#include "nodo.hpp"
 
 class LinkedList{  //una clase que es la lista linkeada
   protected:
-    node *inicio; // crear un nodo de inicio
+    nodo *inicio; // crear un nodo de inicio
 
   public:
     
     LinkedList();    
-    void addnode(int);
+    void addnodo(int);
     void read();
     void insertorder(int);
     int buscar(int);

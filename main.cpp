@@ -1,26 +1,26 @@
 #include <iostream>   //outputs mas faciles
 #include "LinkedList.hpp"
-#include "node.hpp"
+#include "nodo.hpp"
 
 using namespace std;  //imports no usar espacio
 
 int main(){
   LinkedList a;
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(5);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(1);
+  a.addnodo(5);
   a.read();
   a.eliminarRep();
  /* cout<<"el resultado de sumar los pares es: "<< a.Sumarpares()<<endl;

@@ -1,13 +1,14 @@
 #include <iostream>   //outputs mas faciles
 using namespace std;  //imports no usar espacio
 #include "LinkedList.hpp"
+#include  "nodo.hpp"
 
 LinkedList::LinkedList(){ 
   inicio = NULL;  
 } 
 
-void LinkedList::addnode(int n){
-  node *nuevo_nodo =  new node();
+void LinkedList::addnodo(int n){
+  nodo *nuevo_nodo =  new nodo();
   
   if(inicio == NULL)// ¿Existe el primer  nodo?
   {  
@@ -15,7 +16,7 @@ void LinkedList::addnode(int n){
       inicio = nuevo_nodo;
       return;
   }
-  node * temp = inicio;  // un nuevo nodo para validar cuantos nodos hay en la linea y saber en donde insertar el que sigue
+  nodo * temp = inicio;  // un nuevo nodo para validar cuantos nodos hay en la linea y saber en donde insertar el que sigue
   
   while(temp->next != NULL)
   { 
@@ -27,7 +28,7 @@ void LinkedList::addnode(int n){
 }
 
 void LinkedList::read(){
-  node* actual = new node(); // un nodo para saber el inicio
+  nodo* actual = new nodo(); // un nodo para saber el inicio
   actual = inicio;
   
   if(inicio == NULL)// verificar que la lista no este vacia
@@ -48,7 +49,7 @@ void LinkedList::read(){
 int LinkedList::buscar(int n){
   int j=0;
   
-  node *nuevo_nodo = new node ();
+  nodo *nuevo_nodo = new nodo ();
   nuevo_nodo = inicio;
   
   while(nuevo_nodo != NULL)
@@ -68,17 +69,17 @@ int LinkedList::buscar(int n){
 
 int LinkedList::retornar(int n){
   int j = 0;
-  node * nuevo_node = new node();
-  nuevo_node = inicio;
+  nodo * nuevo_nodo = new nodo();
+  nuevo_nodo = inicio;
   
-  while(nuevo_node != NULL)
+  while(nuevo_nodo != NULL)
   {
     if(j == n)
     {
-      return nuevo_node->data;
+      return nuevo_nodo->data;
     }
     
-    nuevo_node = nuevo_node->next;
+    nuevo_nodo = nuevo_nodo->next;
     j++;
   }
   
@@ -88,25 +89,25 @@ int LinkedList::retornar(int n){
 
 void LinkedList::eliminar(int n){
   int j = 0;
-  node * nuevo_node = new node();
-  node * temp = NULL;
-  nuevo_node = inicio;
+  nodo * nuevo_nodo = new nodo();
+  nodo * temp = NULL;
+  nuevo_nodo = inicio;
   
   if(n == 0){
-    inicio = nuevo_node->next;
+    inicio = nuevo_nodo->next;
   }
   
-  while (nuevo_node != NULL)
+  while (nuevo_nodo != NULL)
   {
     if(j == n)
     {
-      cout<<"el valor eliminado es de: "<<nuevo_node->data<<endl;
-      temp->next = nuevo_node->next; 
+      cout<<"el valor eliminado es de: "<<nuevo_nodo->data<<endl;
+      temp->next = nuevo_nodo->next; 
       return;
     }
     j++;
-    temp = nuevo_node;
-    nuevo_node = nuevo_node->next;  
+    temp = nuevo_nodo;
+    nuevo_nodo = nuevo_nodo->next;  
   }
   return;
 }
@@ -114,7 +115,7 @@ void LinkedList::eliminar(int n){
 
 int LinkedList::Sumarpares(){
   int suma=0;
-  node * r = inicio;
+  nodo * r = inicio;
   
   while (r != NULL)
   {
@@ -132,7 +133,7 @@ int LinkedList::Sumarpares(){
 
 int LinkedList::SumarImpares(){
   int suma=0;
-  node * r = inicio;
+  nodo * r = inicio;
   
   while (r != NULL)
   {
@@ -149,7 +150,7 @@ int LinkedList::SumarImpares(){
 
 
 int LinkedList::mayor(){
-  node * r = inicio;
+  nodo * r = inicio;
   int n = 0;
   
   while(r != NULL)
@@ -167,7 +168,7 @@ int LinkedList::mayor(){
 
 
 int LinkedList::menor(){
-  node * r = inicio;
+  nodo * r = inicio;
   int n = r->data;
   
   while(r != NULL)
@@ -185,12 +186,12 @@ int LinkedList::menor(){
 
 void LinkedList::listaRep(){
   LinkedList r;
-  node *a = inicio;
+  nodo *a = inicio;
   
   while (a != NULL)
   {
     int prueba = 0;
-    node * b = a;
+    nodo * b = a;
     
     while (b->next != NULL)
     {   
@@ -200,7 +201,7 @@ void LinkedList::listaRep(){
         
         if(prueba >= 2)
         {
-          r.addnode(a->data);
+          r.addnodo(a->data);
           break;
         }
         
@@ -217,13 +218,13 @@ void LinkedList::listaRep(){
 
 
 void LinkedList::eliminarRep(){
-  node * indicador = inicio;
+  nodo * indicador = inicio;
   int cuenta = 0;
   
   while (indicador != NULL)
   {
     int contador = cuenta;
-    node * eliminador = indicador->next;
+    nodo * eliminador = indicador->next;
     
     while (eliminador != NULL)
     {

@@ -3,7 +3,7 @@
 class nodo{ //una clase lo faciita todo               
   public:
     int data;
-    node *next;
+    nodo *next;
 
     nodo();
     nodo(int data);
