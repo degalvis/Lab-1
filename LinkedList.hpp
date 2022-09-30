@@ -3,6 +3,7 @@ using namespace std;  //imports no usar espacio
 #include "node.hpp"
 
 class LinkedList{  //una clase que es la lista linkeada
+  
   protected:
     node *inicio; // crear un nodo de inicio
 
