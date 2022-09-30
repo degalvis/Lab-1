@@ -1,4 +1,5 @@
 #include <iostream>   //outputs mas faciles
+#pragma once
 
 class node{ //una clase lo faciita todo               
     

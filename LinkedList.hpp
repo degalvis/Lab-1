@@ -5,7 +5,7 @@ using namespace std;  //imports no usar espacio
 class LinkedList{  //una clase que es la lista linkeada
   
   protected:
-    node *inicio; // crear un nodo de inicio
+    node *inicio; // crear un node de inicio
 
   public:
     

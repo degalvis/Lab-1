@@ -12,3 +12,4 @@ node::node(int data){
   data = data;
   next = NULL;
 }
+
