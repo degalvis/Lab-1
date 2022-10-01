@@ -22,4 +22,6 @@ class LinkedList{  //una clase que es la lista linkeada
     int mayor();
     void listaRep();
     void eliminarRep();
+    void ordenarDecreciente();
+    void invertirLista();
 };

@@ -121,6 +121,10 @@ int LinkedList::Sumarpares()
   int suma = 0;
   node *r = inicio;
 
+  if(r == NULL){
+    cout << "Lista vacía" << endl;
+  }
+
   while (r != NULL)
   {
     if (r->data % 2 == 0)
@@ -247,4 +251,38 @@ void LinkedList::eliminarRep()
     indicador = indicador->next;
     cuenta = cuenta + 1;
   }
+}
+
+void LinkedList::ordenarDecreciente(){
+  node *p = inicio;
+  node *q = inicio->next;
+
+  if(q == NULL){
+    cout << "Lista vacía" << endl;
+  }else{
+    
+    while(p != NULL)
+    {
+      while(q != NULL)
+      {
+        if(q ->data > p->data)
+        {
+          int temp = 0;
+
+          temp = p ->data;
+          p -> data = q ->data;
+          q -> data = temp;
+        }
+        q = q->next;
+      }
+    p = p->next;  
+
+    }
+
+  }
+
+}
+
+void LinkedList::invertirLista(){
+
 }

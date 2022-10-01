@@ -1,15 +1,11 @@
 #include <iostream>   //outputs mas faciles
-#include "node.hpp"
-
-using namespace std;  //imports no usar espacio
+#include "node.hpp"   using namespace std;  //imports no usar espacio
 
 node::node(){
   data = 0;
-  next = NULL;
-}
+  next = NULL;}
 
 node::node(int data){
   data = data;
-  next = NULL;
-}
+  next = NULL;}
 
