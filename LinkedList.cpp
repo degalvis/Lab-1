@@ -225,8 +225,7 @@ void LinkedList::listaRep()
   r.read();
 }
 
-void LinkedList::eliminarRep()
-{
+void LinkedList::eliminarRep(){
   node *indicador = inicio;
   int cuenta = 0;
 

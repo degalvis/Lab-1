@@ -1,126 +1,144 @@
 #include <iostream>   //outputs mas faciles
 #include "LinkedList.hpp"
 #include "node.hpp"
+#include <stdlib.h> //System processes
 
 using namespace std;  //imports no usar espacio
 
+void Clear()
+{
+  system("cls");
+}
+
+void Esperar(){
+  cout << "Presione cualquier tecla para continuar"<< endl;
+  system("pause");
+}
+
 int main(){
-  int choice;
+  int choice, dato;
+  
   LinkedList a;
 
   do{
-    cout << "1. Insertar elemento" << endl;
-    cout << "2. Mostrar elementos" << endl;
-    cout << "3. Buscar dato (Retorna posición)" << endl;
-    cout << "4. Buscar dato (Retorna dato)" << endl;
-    cout << "5. Eliminar elemento" << endl;
-    cout << "6. Calcular suma promedio de números pares" << endl;
-    cout << "7. Calcular suma promedio de números impares" << endl;
-    cout << "8. Calcular número menor" << endl;
-    cout << "9. Calcular numero mayour" << endl;
+    cout << " -----------------------------------------------------------------" << endl;
+    cout << "1.  Insertar elemento" << endl;
+    cout << "2.  Mostrar elementos" << endl;
+    cout << "3.  Buscar dato (Retorna posición)" << endl;
+    cout << "4.  Buscar dato (Retorna dato)" << endl;
+    cout << "5.  Eliminar elemento" << endl;
+    cout << "6.  Calcular suma promedio de números pares" << endl;
+    cout << "7.  Calcular suma promedio de números impares" << endl;
+    cout << "8.  Calcular número menor" << endl;
+    cout << "9.  Calcular numero mayour" << endl;
     cout << "10. Mostrar elementos repetidos" << endl;
     cout << "11. Eliminar elementos repetidos" << endl;
     cout << "12. Ordenar la lista de forma decreciente" << endl;
     cout << "13. Invertir la lista" << endl;
     cout << "14. Salir" << endl;
-
+    cout << " -----------------------------------------------------------------" << endl;
+    
     cout << "Ingresa el número de la opción que quieras elegir ";
     cin >> choice;
 
     switch (choice)
     {
     case 1:
-      int dato;
+      Clear();
       cout << "Ingrese el dato ";
       cin >> dato; 
       a.addnode(dato);
+      Esperar();
+      Clear();
       break;
     
     case 2: 
+      Clear();
       a.read();
+      Esperar();
+      Clear();
       break;
 
     case 3:
-      int dato;
+      Clear();
       cout << "Ingrese el dato a buscar";
       cin >> dato;
       a.buscar(dato);
+      Esperar();
       break;
     
     case 4:
+      Clear();
       cout << "Ingrese el dato a buscar";
       cin >> dato;
       a.retornar(dato);
+      Esperar();
       break;
 
     case 5:
+      Clear();
       cout << "Ingrese el dato a eliminar";
       cin >> dato;
       a.eliminar(dato);
+      Esperar();
       break;
 
     case 6:
+      Clear();
       a.Sumarpares();
+      Esperar();
       break;
 
     case 7:
+      Clear();
       a.SumarImpares();
+      Esperar();
       break;
     
     case 8:
+      Clear();
       a.menor();
+      Esperar();
       break;
     
     case 9:
+      Clear();
       a.mayor();
+      Esperar();
       break;
     
     case 10:
+      Clear();
       a.listaRep();
+      Esperar();
       break;
     case 11:
+      Clear();
       a.eliminarRep();
+      Esperar();
       break;
 
     case 12:
+      Clear();
       a.ordenarDecreciente();
+      Esperar();
       break;
 
     case 13:
+      Clear();
       a.invertirLista();
+      Esperar();
       break;
     
     case 14:
-    //Exit
+      cout << "Gracias por usar nuestro sistema. Merecemos un 5 :)";
+      return 0;
     
     default:
       break;
     }
 
+  }while(choice > 0 && choice < 15);
 
-
-  }while(choice >0 && choice < 13);
-
-
-  
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(1);
-  a.addnode(5);
-  a.read();
-  a.eliminarRep();
-  a.SumarImpares();
-  a.Sumarpares();
- /* cout<<"el resultado de sumar los pares es: "<< a.Sumarpares()<<endl;
-  cout<<"el resultado de sumar los inpares es: "<< a.SumarInpares()<<endl;
-  a.eliminar(1);
-  cout<<"el  valor de esta en la posicion:  "<<" "<<a.buscar(6)<<endl;
-  cout<<"el valor en la posicion 1 es igual a "<<a.retornar(1)<<endl;
-  cout<<a.mayor()<<endl;
-  cout<<a.menor()<<endl;*/
-  a.read();
- // a.listaRep();
   return 0;
 }

@@ -8,7 +8,6 @@ class LinkedList{  //una clase que es la lista linkeada
     node *inicio; // crear un node de inicio
 
   public:
-    
     LinkedList();    
     void addnode(int);
     void read();
