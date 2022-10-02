@@ -55,6 +55,12 @@ int LinkedList::buscar(int n)
   node *nuevo_node = new node();
   nuevo_node = inicio;
 
+  if(nuevo_node == NULL)
+  {
+    cout << "Lista vacía" << endl;
+  
+  }
+
   while (nuevo_node != NULL)
   {
     if (nuevo_node->data == n)
@@ -65,6 +71,9 @@ int LinkedList::buscar(int n)
     j = j + 1;
     nuevo_node = nuevo_node->next;
   }
+  
+
+  
 
   return -1;
 }
@@ -74,6 +83,11 @@ int LinkedList::retornar(int n)
   int j = 0;
   node *nuevo_node = new node();
   nuevo_node = inicio;
+
+  if(nuevo_node == NULL)
+  {
+    cout << "La lista está vacía." << endl;
+  }
 
   while (nuevo_node != NULL)
   {
@@ -85,6 +99,7 @@ int LinkedList::retornar(int n)
     nuevo_node = nuevo_node->next;
     j++;
   }
+
 
   return -1;
 }
@@ -101,18 +116,26 @@ void LinkedList::eliminar(int n)
     inicio = nuevo_node->next;
   }
 
-  while (nuevo_node != NULL)
+  if(nuevo_node == NULL)
   {
-    if (j == n)
+    cout << "Lista vacía" << endl;
+  
+  }else{
+    while (nuevo_node != NULL)
     {
-      cout << "el valor eliminado es de: " << nuevo_node->data << endl;
-      temp->next = nuevo_node->next;
-      return;
+      if (j == n)
+      {
+        cout << "el valor eliminado es de: " << nuevo_node->data << endl;
+        temp->next = nuevo_node->next;
+        return;
+      }
+      j++;
+      temp = nuevo_node;
+      nuevo_node = nuevo_node->next;
     }
-    j++;
-    temp = nuevo_node;
-    nuevo_node = nuevo_node->next;
   }
+
+ 
   return;
 }
 
@@ -143,15 +166,21 @@ int LinkedList::SumarImpares()
   int suma = 0;
   node *r = inicio;
 
-  while (r != NULL)
-  {
-    if (r->data % 2 != 0)
+  if(r == NULL){
+    cout << "Lista vacía" << endl;
+  }else{
+    while (r != NULL)
     {
-      suma = suma + r->data;
-    }
+      if (r->data % 2 != 0)
+      {
+        suma = suma + r->data;
+      }
 
-    r = r->next;
+      r = r->next;
+    }
   }
+
+  
 
   return suma;
 }
@@ -161,15 +190,22 @@ int LinkedList::mayor()
   node *r = inicio;
   int n = 0;
 
-  while (r != NULL)
+  if(r == NULL)
   {
-    if (n < r->data)
+    cout << "Lista vacía" << endl;
+  }else{
+    while (r != NULL)
     {
-      n = r->data;
-    }
+      if (n < r->data)
+      {
+        n = r->data;
+      }
 
-    r = r->next;
+      r = r->next;
+    }
   }
+
+  
 
   return n;
 }
@@ -179,15 +215,23 @@ int LinkedList::menor()
   node *r = inicio;
   int n = r->data;
 
-  while (r != NULL)
+  if(r == NULL)
   {
-    if (n > r->data)
-    {
-      n = r->data;
-    }
+    cout << "Lista vacía" << endl;
+  }else{
 
-    r = r->next;
+    while (r != NULL)
+    {
+      if (n > r->data)
+      {
+        n = r->data;
+      }
+
+      r = r->next;
+    }
   }
+
+  
   return n;
 }
 
@@ -229,56 +273,62 @@ void LinkedList::eliminarRep(){
   node *indicador = inicio;
   int cuenta = 0;
 
-  while (indicador != NULL)
+  if(indicador == NULL)
   {
-    int contador = cuenta;
-    node *eliminador = indicador->next;
+    cout << "Lista vacía" << endl;
+  }else{
+    while (indicador != NULL)
+    {
+      int contador = cuenta;
+      node *eliminador = indicador->next;
 
-    while (eliminador != NULL)
-    { 
-      contador = contador + 1;
+      while (eliminador != NULL)
+      { 
+        contador = contador + 1;
 
-      if (indicador->data == eliminador->data)
-      {
-        eliminar(contador);
-        contador--;
+        if (indicador->data == eliminador->data)
+        {
+          eliminar(contador);
+          contador--;
+        }
+
+        eliminador = eliminador->next;
       }
 
-      eliminador = eliminador->next;
+      indicador = indicador->next;
+      cuenta = cuenta + 1;
     }
 
-    indicador = indicador->next;
-    cuenta = cuenta + 1;
   }
+  
 }
 
 void LinkedList::ordenarDecreciente(){
   node *p = inicio;
   node *q = inicio->next;
 
-  if(q == NULL){
+  if(p == NULL){
     cout << "Lista vacía" << endl;
-  }else{
-    
-    while(p != NULL)
-    {
-      while(q != NULL)
-      {
-        if(q ->data > p->data)
-        {
-          int temp = 0;
-
-          temp = p ->data;
-          p -> data = q ->data;
-          q -> data = temp;
-        }
-        q = q->next;
-      }
-    p = p->next;  
-
-    }
-
   }
+
+  while(p != NULL)
+  {
+    while(q != NULL)
+    {
+      if(q ->data > p->data)
+      {
+        int temp = 0;
+
+        temp = p ->data;
+        p -> data = q ->data;
+        q -> data = temp;
+      }
+      q = q->next;
+    }
+    p = p->next;  
+  }
+
+
 
 }
 

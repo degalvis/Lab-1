@@ -30,7 +30,7 @@ int main(){
     cout << "6.  Calcular suma promedio de números pares" << endl;
     cout << "7.  Calcular suma promedio de números impares" << endl;
     cout << "8.  Calcular número menor" << endl;
-    cout << "9.  Calcular numero mayour" << endl;
+    cout << "9.  Calcular numero mayor" << endl;
     cout << "10. Mostrar elementos repetidos" << endl;
     cout << "11. Eliminar elementos repetidos" << endl;
     cout << "12. Ordenar la lista de forma decreciente" << endl;
@@ -61,7 +61,7 @@ int main(){
 
     case 3:
       Clear();
-      cout << "Ingrese el dato a buscar";
+      cout << "Ingrese el dato a buscar ";
       cin >> dato;
       a.buscar(dato);
       Esperar();
@@ -69,7 +69,7 @@ int main(){
     
     case 4:
       Clear();
-      cout << "Ingrese el dato a buscar";
+      cout << "Ingrese el dato a buscar ";
       cin >> dato;
       a.retornar(dato);
       Esperar();
@@ -77,7 +77,7 @@ int main(){
 
     case 5:
       Clear();
-      cout << "Ingrese el dato a eliminar";
+      cout << "Ingrese el dato a eliminar ";
       cin >> dato;
       a.eliminar(dato);
       Esperar();
@@ -122,12 +122,14 @@ int main(){
       Clear();
       a.ordenarDecreciente();
       Esperar();
+      Clear();
       break;
 
     case 13:
       Clear();
       a.invertirLista();
       Esperar();
+      Clear();
       break;
     
     case 14:
