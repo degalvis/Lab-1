@@ -367,12 +367,13 @@ void LinkedList::invertirLista(int cantidadNodes){
     cout << "Lista vacía" << endl;
   }else{
     int i = 0;
+    int cantNodes2 = cantidadNodes;
     while(i < cantidadNodes){
       cout << "Vuelta" << i << endl;
       node *p = inicio;
       node *q = inicio->next;
-      int j = cantidadNodes-1;
-      while(cantidadNodes > j)
+      int j = 1;
+      while(cantNodes2 > j)
       {
         int temp;
         temp = p ->data;
@@ -381,8 +382,9 @@ void LinkedList::invertirLista(int cantidadNodes){
         /////
         q = q->next;
         p = p->next;
-        j--;
+        j++;
       }
+      cantNodes2--;
       i++;
     }
   }
