@@ -13,3 +13,6 @@ Diego Galvis
 For this project is directly run using console.
 
 ## Link to video
+Part 1: https://acortar.link/MUrlHs
+Part 2: https://acortar.link/e6OYgd
+
