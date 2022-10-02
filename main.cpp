@@ -41,6 +41,7 @@ int main(){
     cout << "Ingresa el número de la opción que quieras elegir ";
     cin >> choice;
 
+
     switch (choice)
     {
     case 1:
@@ -138,6 +139,7 @@ int main(){
       return 0;
     
     default:
+      cout << "Dígite un número entre el rango" << endl;
       break;
     }
 
