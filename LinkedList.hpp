@@ -2,6 +2,7 @@
 using namespace std;  //imports no usar espacio
 #include "node.hpp"
 
+
 class LinkedList{  //una clase que es la lista linkeada
   
   protected:
@@ -23,4 +24,5 @@ class LinkedList{  //una clase que es la lista linkeada
     void eliminarRep();
     void ordenarDecreciente();
     void invertirLista();
+    bool contiene(int);
 };
