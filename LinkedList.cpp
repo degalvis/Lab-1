@@ -28,6 +28,18 @@ void LinkedList::addnode(int n)
   nuevo_node->data = n;
   temp->next = nuevo_node;
 }
+bool LinkedList::contiene(int buscar){ //metodo interno para el metodo de listarepetidos y retorna si contiene un valor
+  node *actual = new node(); 
+  actual = inicio;
+  while (actual != NULL) // proceder a imprimir hasta que se encuentre un valor nulo
+  {
+    if(actual->data == buscar){
+     return true;
+    }
+    actual = actual->next;
+  }
+  return false;
+}
 
 void LinkedList::read()
 {
@@ -193,36 +205,31 @@ int LinkedList::menor()
 
 void LinkedList::listaRep()
 {
-
-  LinkedList r;
-
+  LinkedList repetidos;
   node *a = inicio;
-
-  while (a != NULL)
+  while (a->next != NULL)
   {
-    int prueba = 0;
-    node *b = a;
+    node *b = a->next;
 
-    while (b->next != NULL)
+    while (b != NULL)
     {
       if (a->data == b->data)
       {
-        prueba++;
-
-        if (prueba >= 2)
-        {
-          r.addnode(a->data);
-          break;
+        if(!repetidos.contiene(a->data)){
+        repetidos.addnode(b->data);
+        }else{
+          b = b->next;
+          continue;
         }
+      
       }
-
       b = b->next;
     }
 
     a = a->next;
   }
+  repetidos.read();
 
-  r.read();
 }
 
 void LinkedList::eliminarRep(){

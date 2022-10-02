@@ -111,6 +111,7 @@ int main(){
       Clear();
       a.listaRep();
       Esperar();
+      Clear();
       break;
     case 11:
       Clear();
