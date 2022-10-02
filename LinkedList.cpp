@@ -54,7 +54,7 @@ void LinkedList::read()
 
   while (actual != NULL) // proceder a imprimir hasta que se encuentre un valor nulo
   {
-    std::cout << actual->data << "->";
+    cout << actual->data << "->";
     actual = actual->next;
   }
 
@@ -317,32 +317,73 @@ void LinkedList::eliminarRep(){
 }
 
 
-void LinkedList::ordenarDecreciente(){
-  node *p = inicio;
-  node *q = inicio->next;
+void LinkedList::ordenarDecreciente(int cantidadNodes){
 
-  if(p == NULL){
+  if(cantidadNodes == 0){
     cout << "Lista vacía" << endl;
-  }
-
-  while(p != NULL)
-  {
-    while(q != NULL)
-    {
-      if(q ->data > p->data)
+  }else{
+    for(int i = 0; i < cantidadNodes; i++){
+      //cout << "Vuelta" << i << endl;
+      node *p = inicio;
+      node *q = inicio->next;
+      while(q != NULL)
       {
-        int temp = 0;
-
-        temp = p ->data;
-        p -> data = q ->data;
-        q -> data = temp;
+        if(q ->data > p->data)
+        {
+          int temp = 0;
+          temp = p ->data;
+          p -> data = q ->data;
+          q -> data = temp;
+        }
+        q = q->next;
+        p = p->next;
       }
-      q = q->next;
-      p = p->next;
     }
+  }  
+
+}
+
+
+int LinkedList::countNodes(LinkedList a){
+  node *p = inicio;
+  int contador = 0;
+  
+  if(p == NULL)
+  {
+    return 0;
+  }else{
+    while(p != NULL){
+      contador += 1;
+      p = p ->next;
+    }
+    return contador;
   }
 
 }
-void LinkedList::invertirLista(){
 
+
+void LinkedList::invertirLista(int cantidadNodes){
+  if(cantidadNodes == 0){
+    cout << "Lista vacía" << endl;
+  }else{
+    int i = 0;
+    while(i < cantidadNodes){
+      cout << "Vuelta" << i << endl;
+      node *p = inicio;
+      node *q = inicio->next;
+      int j = cantidadNodes-1;
+      while(cantidadNodes > j)
+      {
+        int temp;
+        temp = p ->data;
+        p -> data = q ->data;
+        q -> data = temp;
+        /////
+        q = q->next;
+        p = p->next;
+        j--;
+      }
+      i++;
+    }
+  }
 }

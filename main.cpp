@@ -38,7 +38,7 @@ void MostrarMenu(){
 }
 
 int main(){
-  int choice, dato;
+  int choice, dato, cantNodes;
   LinkedList a;
 
   do{
@@ -142,10 +142,11 @@ int main(){
 
     case 12:
       Clear();
-      cout<<"La lista actual es:" << endl;
+      cout << "La lista actual es: " << endl;
       a.read();
+      cantNodes = a.countNodes(a);
       cout<<"Ahora es así:"<<endl;
-      a.ordenarDecreciente();
+      a.ordenarDecreciente(cantNodes);
       a.read();
       Esperar();
       Clear();
@@ -153,7 +154,12 @@ int main(){
 
     case 13:
       Clear();
-      a.invertirLista();
+      cout<<"La lista actual es:" << endl;
+      a.read();
+      cout<<"Ahora es así:"<<endl;
+      cantNodes = a.countNodes(a);
+      a.invertirLista(cantNodes);
+      a.read();
       Esperar();
       Clear();
       break;
