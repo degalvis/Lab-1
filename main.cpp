@@ -76,14 +76,16 @@ int main(){
       cin >> dato;
       a.buscar(dato);
       Esperar();
+      Clear();
       break;
     
     case 4:
       Clear();
       cout << "Ingrese el dato a buscar ";
       cin >> dato;
-      a.retornar(dato);
+      cout<<"El dato buscado está en: "<< a.retornar(dato) <<endl;
       Esperar();
+      Clear();
       break;
 
     case 5:
@@ -92,30 +94,36 @@ int main(){
       cin >> dato;
       a.eliminar(dato);
       Esperar();
+      Clear();
       break;
 
     case 6:
       Clear();
       a.Sumarpares();
+      cout << "La suma de los numeros pares en la lista es: " << a.Sumarpares() << endl;
       Esperar();
+      Clear();
       break;
 
     case 7:
       Clear();
-      a.SumarImpares();
+      cout << "La suma de los numeros impares en la lista es: " << a.SumarImpares() << endl;
       Esperar();
+      Clear();
       break;
     
     case 8:
       Clear();
-      a.menor();
+      cout << "El número mayor es: " << a.menor() << endl;
       Esperar();
+      Clear();
       break;
     
     case 9:
       Clear();
-      a.mayor();
+      cout << "El número mayor es: " << a.mayor() << endl;
       Esperar();
+      Clear();
       break;
     
     case 10:
@@ -124,15 +132,21 @@ int main(){
       Esperar();
       Clear();
       break;
+    
     case 11:
       Clear();
       a.eliminarRep();
       Esperar();
+      Clear();
       break;
 
     case 12:
       Clear();
+      cout<<"La lista actual es:" << endl;
+      a.read();
+      cout<<"Ahora es así:"<<endl;
       a.ordenarDecreciente();
+      a.read();
       Esperar();
       Clear();
       break;
@@ -154,8 +168,6 @@ int main(){
     
     }
     
-    
-
   }while(choice > 0 && choice < 15);
 
   return 0;

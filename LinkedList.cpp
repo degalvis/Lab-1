@@ -28,6 +28,7 @@ void LinkedList::addnode(int n)
   nuevo_node->data = n;
   temp->next = nuevo_node;
 }
+
 bool LinkedList::contiene(int buscar){ //metodo interno para el metodo de listarepetidos y retorna si contiene un valor
   node *actual = new node(); 
   actual = inicio;
@@ -153,7 +154,7 @@ void LinkedList::eliminar(int n)
 
 int LinkedList::Sumarpares()
 {
-  int suma = 0;
+  int suma = 0, contador = 0;
   node *r = inicio;
 
   if(r == NULL){
@@ -165,17 +166,21 @@ int LinkedList::Sumarpares()
     if (r->data % 2 == 0)
     {
       suma = suma + r->data;
+      contador += 1;
     }
 
     r = r->next;
   }
+
+  suma = suma / contador;
 
   return suma;
 }
 
 int LinkedList::SumarImpares()
 {
-  int suma = 0;
+  int contador = 0;
+  float suma = 0;
   node *r = inicio;
 
   if(r == NULL){
@@ -186,13 +191,14 @@ int LinkedList::SumarImpares()
       if (r->data % 2 != 0)
       {
         suma = suma + r->data;
+        contador += 1;
       }
 
       r = r->next;
     }
   }
 
-  
+  suma = suma / contador;
 
   return suma;
 }
@@ -334,13 +340,9 @@ void LinkedList::ordenarDecreciente(){
       q = q->next;
       p = p->next;
     }
-    break;
   }
 
-
-
 }
-
 void LinkedList::invertirLista(){
 
 }
