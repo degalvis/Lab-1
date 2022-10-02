@@ -310,6 +310,7 @@ void LinkedList::eliminarRep(){
   
 }
 
+
 void LinkedList::ordenarDecreciente(){
   node *p = inicio;
   node *q = inicio->next;
@@ -331,8 +332,9 @@ void LinkedList::ordenarDecreciente(){
         q -> data = temp;
       }
       q = q->next;
+      p = p->next;
     }
-    p = p->next;  
+    break;
   }
 
 

@@ -42,116 +42,116 @@ int main(){
   LinkedList a;
 
   do{
-    
     MostrarMenu();
     cout << "Ingresa el número de la opción que quieras elegir ";
     cin >> choice;
 
-    if(choice != 1 && !(choice <=14)){
-      MostrarMenu();
-      cin >> choice;
+    if(choice != 1 && !(choice <=14))
+    {
+      //MostrarMenu();
+      //cin >> choice;
       system("ejecutable.exe");
-    }else{
-      switch (choice)
-      {
-      case 1:
-        Clear();
-        cout << "Ingrese el dato ";
-        cin >> dato; 
-        a.addnode(dato);
-        Esperar();
-        Clear();
-        break;
-      
-      case 2: 
-        Clear();
-        a.read();
-        Esperar();
-        Clear();
-        break;
+    }
+    switch (choice)
+    {
+    case 1:
+      Clear();
+      cout << "Ingrese el dato ";
+      cin >> dato; 
+      a.addnode(dato);
+      Esperar();
+      Clear();
+      break;
+    
+    case 2: 
+      Clear();
+      a.read();
+      Esperar();
+      Clear();
+      break;
 
-      case 3:
-        Clear();
-        cout << "Ingrese el dato a buscar ";
-        cin >> dato;
-        a.buscar(dato);
-        Esperar();
-        break;
-      
-      case 4:
-        Clear();
-        cout << "Ingrese el dato a buscar ";
-        cin >> dato;
-        a.retornar(dato);
-        Esperar();
-        break;
+    case 3:
+      Clear();
+      cout << "Ingrese el dato a buscar ";
+      cin >> dato;
+      a.buscar(dato);
+      Esperar();
+      break;
+    
+    case 4:
+      Clear();
+      cout << "Ingrese el dato a buscar ";
+      cin >> dato;
+      a.retornar(dato);
+      Esperar();
+      break;
 
-      case 5:
-        Clear();
-        cout << "Ingrese el dato a eliminar ";
-        cin >> dato;
-        a.eliminar(dato);
-        Esperar();
-        break;
+    case 5:
+      Clear();
+      cout << "Ingrese el dato a eliminar ";
+      cin >> dato;
+      a.eliminar(dato);
+      Esperar();
+      break;
 
-      case 6:
-        Clear();
-        a.Sumarpares();
-        Esperar();
-        break;
+    case 6:
+      Clear();
+      a.Sumarpares();
+      Esperar();
+      break;
 
-      case 7:
-        Clear();
-        a.SumarImpares();
-        Esperar();
-        break;
-      
-      case 8:
-        Clear();
-        a.menor();
-        Esperar();
-        break;
-      
-      case 9:
-        Clear();
-        a.mayor();
-        Esperar();
-        break;
-      
-      case 10:
-        Clear();
-        a.listaRep();
-        Esperar();
-        Clear();
-        break;
-      case 11:
-        Clear();
-        a.eliminarRep();
-        Esperar();
-        break;
+    case 7:
+      Clear();
+      a.SumarImpares();
+      Esperar();
+      break;
+    
+    case 8:
+      Clear();
+      a.menor();
+      Esperar();
+      break;
+    
+    case 9:
+      Clear();
+      a.mayor();
+      Esperar();
+      break;
+    
+    case 10:
+      Clear();
+      a.listaRep();
+      Esperar();
+      Clear();
+      break;
+    case 11:
+      Clear();
+      a.eliminarRep();
+      Esperar();
+      break;
 
-      case 12:
-        Clear();
-        a.ordenarDecreciente();
-        Esperar();
-        Clear();
-        break;
+    case 12:
+      Clear();
+      a.ordenarDecreciente();
+      Esperar();
+      Clear();
+      break;
 
-      case 13:
-        Clear();
-        a.invertirLista();
-        Esperar();
-        Clear();
-        break;
-      
-      case 14:
-        cout << "Gracias por usar nuestro sistema. Merecemos un 5 :)";
-        return 0;
-      
-      default:
-        cout << "Dígite un número entre el rango" << endl;
-        break;
-      }
+    case 13:
+      Clear();
+      a.invertirLista();
+      Esperar();
+      Clear();
+      break;
+    
+    case 14:
+      cout << "Gracias por usar nuestro sistema. Merecemos un 5 :)";
+      return 0;
+    
+    default:
+      cout << "Dígite un número entre el rango" << endl;
+      break;
+    
     }
     
     
