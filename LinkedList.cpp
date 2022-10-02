@@ -71,7 +71,6 @@ int LinkedList::buscar(int n)
   if(nuevo_node == NULL)
   {
     cout << "Lista vacía" << endl;
-  
   }
 
   while (nuevo_node != NULL)
@@ -85,9 +84,6 @@ int LinkedList::buscar(int n)
     nuevo_node = nuevo_node->next;
   }
   
-
-  
-
   return -1;
 }
 
@@ -147,8 +143,6 @@ void LinkedList::eliminar(int n)
       nuevo_node = nuevo_node->next;
     }
   }
-
- 
   return;
 }
 
@@ -222,9 +216,6 @@ int LinkedList::mayor()
       r = r->next;
     }
   }
-
-  
-
   return n;
 }
 
@@ -248,8 +239,7 @@ int LinkedList::menor()
       r = r->next;
     }
   }
-
-  
+ 
   return n;
 }
 
@@ -257,10 +247,10 @@ void LinkedList::listaRep()
 {
   LinkedList repetidos;
   node *a = inicio;
+
   while (a->next != NULL)
   {
     node *b = a->next;
-
     while (b != NULL)
     {
       if (a->data == b->data)
@@ -278,8 +268,8 @@ void LinkedList::listaRep()
 
     a = a->next;
   }
-  repetidos.read();
 
+  repetidos.read();
 }
 
 void LinkedList::eliminarRep(){
@@ -368,10 +358,12 @@ void LinkedList::invertirLista(int cantidadNodes){
   }else{
     int i = 0;
     int cantNodes2 = cantidadNodes;
+    
     while(i < cantidadNodes){
       cout << "Vuelta" << i << endl;
       node *p = inicio;
       node *q = inicio->next;
+      
       int j = 1;
       while(cantNodes2 > j)
       {
@@ -387,5 +379,6 @@ void LinkedList::invertirLista(int cantidadNodes){
       cantNodes2--;
       i++;
     }
+ 
   }
 }

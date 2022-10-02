@@ -12,7 +12,6 @@ class LinkedList{  //una clase que es la lista linkeada
     LinkedList();    
     void addnode(int);
     void read();
-    void insertorder(int);
     int buscar(int);
     int retornar(int);
     void eliminar(int);
@@ -22,8 +21,8 @@ class LinkedList{  //una clase que es la lista linkeada
     int mayor();
     void listaRep();
     void eliminarRep();
-    void ordenarDecreciente(int cantidadNodes);
-    void invertirLista(int cantidadNodes);
+    void ordenarDecreciente(int);
+    void invertirLista(int);
     bool contiene(int);
     int countNodes(LinkedList L);
 };

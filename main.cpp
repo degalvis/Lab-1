@@ -7,7 +7,7 @@ using namespace std;  //imports no usar espacio
 
 void Clear()
 {
-  system("cls");
+  system("cls"); 
 }
 
 void Esperar(){
@@ -20,12 +20,12 @@ void MostrarMenu(){
   cout << " -----------------------------------------------------------------" << endl;
   cout << "1.  Insertar elemento" << endl;
   cout << "2.  Mostrar elementos" << endl;
-  cout << "3.  Buscar dato (Retorna posición)" << endl;
+  cout << "3.  Buscar dato (Retorna posicion)" << endl;
   cout << "4.  Buscar dato (Retorna dato)" << endl;
   cout << "5.  Eliminar elemento" << endl;
-  cout << "6.  Calcular suma promedio de números pares" << endl;
-  cout << "7.  Calcular suma promedio de números impares" << endl;
-  cout << "8.  Calcular número menor" << endl;
+  cout << "6.  Calcular suma promedio de numeros pares" << endl;
+  cout << "7.  Calcular suma promedio de numeros impares" << endl;
+  cout << "8.  Calcular numero menor" << endl;
   cout << "9.  Calcular numero mayor" << endl;
   cout << "10. Mostrar elementos repetidos" << endl;
   cout << "11. Eliminar elementos repetidos" << endl;
@@ -33,8 +33,7 @@ void MostrarMenu(){
   cout << "13. Invertir la lista" << endl;
   cout << "14. Salir" << endl;
   cout << " -----------------------------------------------------------------" << endl;
-  
-  
+
 }
 
 int main(){
@@ -43,15 +42,9 @@ int main(){
 
   do{
     MostrarMenu();
-    cout << "Ingresa el número de la opción que quieras elegir ";
+    cout << "Ingresa el numero de la opción que quieras elegir ";
     cin >> choice;
 
-    if(choice != 1 && !(choice <=14))
-    {
-      //MostrarMenu();
-      //cin >> choice;
-      system("ejecutable.exe");
-    }
     switch (choice)
     {
     case 1:
@@ -72,9 +65,11 @@ int main(){
 
     case 3:
       Clear();
-      cout << "Ingrese el dato a buscar ";
+      cout << "Ingrese el dato a buscar por posicion ";
       cin >> dato;
-      a.buscar(dato);
+      int en;
+      en = a.buscar(dato);
+      cout << "El dato buscado esta: " << en << endl; 
       Esperar();
       Clear();
       break;
@@ -83,7 +78,7 @@ int main(){
       Clear();
       cout << "Ingrese el dato a buscar ";
       cin >> dato;
-      cout<<"El dato buscado está en: "<< a.retornar(dato) <<endl;
+      cout<<"El dato buscado esta en: "<< a.retornar(dato) <<endl;
       Esperar();
       Clear();
       break;
@@ -114,14 +109,14 @@ int main(){
     
     case 8:
       Clear();
-      cout << "El número mayor es: " << a.menor() << endl;
+      cout << "El numero mayor es: " << a.menor() << endl;
       Esperar();
       Clear();
       break;
     
     case 9:
       Clear();
-      cout << "El número mayor es: " << a.mayor() << endl;
+      cout << "El numero mayor es: " << a.mayor() << endl;
       Esperar();
       Clear();
       break;
@@ -169,7 +164,7 @@ int main(){
       return 0;
     
     default:
-      cout << "Dígite un número entre el rango" << endl;
+      cout << "Digite un numero entre el rango" << endl;
       break;
     
     }

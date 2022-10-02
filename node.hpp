@@ -8,4 +8,5 @@ class node{ //una clase lo faciita todo
     node *next;
     node();
     node(int data);
+
 };    
